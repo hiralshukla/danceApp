@@ -1,0 +1,208 @@
+.homepage {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.dot {
+  color: #a855f7;
+}
+
+.search {
+  flex-grow: 1;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  max-width: 100%;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.create-btn,
+.login-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.create-btn {
+  background-color: #9333ea;
+  color: white;
+}
+
+.create-btn:hover {
+  background-color: #7e22ce;
+}
+
+.login-btn {
+  border: 1px solid #d1d5db;
+  background-color: transparent;
+}
+
+.login-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.notif-btn {
+  font-size: 1.25rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Main Content */
+.main-content {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #111827;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.main-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.gradient-btn {
+  background-image: linear-gradient(to right, #9333ea, #ec4899);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  animation: pulse 2s infinite;
+  transition: transform 0.2s ease-in-out;
+}
+
+.gradient-btn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.join-btn {
+  border: 1px solid black;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.scroll-text {
+  margin-top: 3rem;
+  font-size: 1.125rem;
+  font-style: italic;
+  color: #4b5563;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  color: #4b5563;
+  z-index: 1000;
+}
+
+.footer-tab {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-tab:hover {
+  color: #a855f7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.75rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .gradient-btn,
+  .join-btn {
+    width: 90%;
+  }
+
+  .search {
+    margin: 0.5rem 0;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .main-buttons {
+    gap: 0.75rem;
+  }
+}
