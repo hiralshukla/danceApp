@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './homepage.css';
 
 const HomePage = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const elements = document.querySelectorAll('.fade-up');
+    elements.forEach(el => observer.observe(el));
+
+    return () => elements.forEach(el => observer.unobserve(el));
+  }, []);
+
   return (
     <div className="homepage">
       {/* Nav Bar */}
@@ -27,6 +47,31 @@ const HomePage = () => {
         </div>
         <p className="scroll-text">Scroll to explore</p>
       </main>
+
+
+      {/* NEW INFO SECTION */}
+      <section className="info-section">
+        <div className="info-block fade-up">
+          <h2>Jumpstart your career!</h2>
+          <p>Whether you’re a beginner or a pro, kham connects you with workshops, battles, and gigs in your city.</p>
+        </div>
+
+        <div className="info-block fade-up">
+          <h2>There’s a dancer in everyone!</h2>
+          <p>From freestylers to classical artists—find your rhythm, share your story, and grow with a like-minded crew.</p>
+        </div>
+
+        <div className="info-block fade-up">
+          <h2>Meet the Team</h2>
+          <p>We’re dancers, creators, and coders building a space we always wished existed—by dancers, for dancers.</p>
+        </div>
+        <div className="info-block fade-up center-button">
+          <button className="general-btn">General</button>
+        </div>
+  
+        
+      </section>
+      
 
       {/* Footer Bar */}
       <footer className="footer">
