@@ -1,12 +1,16 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProfilePage from './ProfilePage';
+import FolderPostsPage from './FolderPostsPage';
 
 function App() {
   return (
-    <div>
-      {/* Temporary: directly render your new page */}
-      <ProfilePage />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<ProfilePage />} />
+        <Route path="/folder/:folderTitle" element={<FolderPostsPage />} />
+      </Routes>
+    </Router>
   );
 }
 
