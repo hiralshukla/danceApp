@@ -1,5 +1,7 @@
 import React from 'react';
 import ProfilePage from './ProfilePage';
+import SignUpPage from './SignUpPage';
+import LoginPage from './LoginPage';
 
 function App() {
   return (
