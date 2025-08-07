@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './homepage.css';
 
-
 const HomePage = () => {
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -25,11 +25,11 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="homepage">
+    <div className="homepage gradient-background">
       {/* Nav Bar */}
       <nav className="navbar">
-        <div className="logo">
-          kham<span className="dot">.</span>
+        <div className="logo black-text">
+          8count<span className="dot">.</span>
         </div>
         <input className="search" type="text" placeholder="Search dancers, styles, trends..." />
         <div className="nav-buttons">
@@ -41,40 +41,38 @@ const HomePage = () => {
 
       {/* Main Content */}
       <main className="main-content">
-        <h1 className="title">kham</h1>
+        <h1 className="title black-text">kham</h1>
         <p className="subtitle">An app for dancers, by dancers</p>
         <div className="main-buttons">
-          <button className="btn gradient-btn">Start Creating Now</button>
+          <button className="btn gradient-btn pulse">Start Creating Now</button>
           <button className="btn join-btn">Join the Community →</button>
         </div>
         <p className="scroll-text">Scroll to explore</p>
       </main>
 
-
-      {/* NEW INFO SECTION */}
+      {/* Info Section */}
       <section className="info-section">
-        <div className="info-block fade-up">
+        <div className="info-block fade-up" style={{ marginTop: '4rem' }}>
           <h2>Jumpstart your career!</h2>
-          <p>Whether you’re a beginner or a pro, kham connects you with workshops, battles, and gigs in your city.</p>
+          <p>Whether you’re a beginner or a pro, kham connects you with worSkshops, battles, and gigs in your city.</p>
         </div>
-
         <div className="info-block fade-up">
           <h2>There’s a dancer in everyone!</h2>
           <p>From freestylers to classical artists—find your rhythm, share your story, and grow with a like-minded crew.</p>
         </div>
-
         <div className="info-block fade-up">
           <h2>Meet the Team</h2>
           <p>We’re dancers, creators, and coders building a space we always wished existed—by dancers, for dancers.</p>
         </div>
-        <div className="info-block fade-up center-button">
-          <button className="general-btn">General</button>
+        <div className="info-block fade-up general-section">
+          <h2 className="general-heading">Want to explore more?</h2>
+          <p className="general-text">We’ve built a space for every style and story. Look through this and explore it all.</p>
+          <button className="general-btn pulse">General</button>
         </div>
-  
-
       </section>
 
-      <section className="explore-section">
+      {/* Explore Styles */}
+         <section className="explore-section" style={{ marginTop: '-1rem' }}>
         <h2 className="explore-title">Explore Styles</h2>
 
         <div className="style-grid-container">
@@ -84,7 +82,7 @@ const HomePage = () => {
               'Jazz', 'Breaking', 'Popping',
               'Heels', 'Waacking', 'Ballroom'
             ].map((style, idx) => (
-              <div className="style-card" key={idx}>{style}</div>
+              <div className="style-card shimmer" key={idx}>{style}</div>
             ))}
           </div>
 
@@ -102,7 +100,7 @@ const HomePage = () => {
                 'Salsa', 'K-Pop', 'Tutting', 'Krump',
                 'Kathak', 'Bharatanatyam', 'Tango', 'Tap'
               ].map((style, idx) => (
-                <div className="style-card" key={`extra-${idx}`}>{style}</div>
+                <div className="style-card shimmer" key={`extra-${idx}`}>{style}</div>
               ))}
             </div>
 
@@ -111,16 +109,15 @@ const HomePage = () => {
             </button>
           </>
         )}
-     </section>
+      </section>
 
-     {/* Ready to Shine Section */}
+      {/* Shine Section */}
       <section className="shine-section">
         <div className="shine-card">
-          <h3 className="shine-title">Ready to shine?</h3>
+          <h3 className="shine-title gradient-text">Ready to shine?</h3>
           <p className="shine-subtext">Join thousands of dancers sharing their passion</p>
-
           <div className="shine-buttons">
-            <button className="btn upload-btn">
+            <button className="btn upload-btn pulse">
               📹 Upload Your Dance <span className="arrow">→</span>
             </button>
             <button className="btn join-btn-light">
@@ -130,9 +127,9 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Footer Bar */}
+      {/* Footer */}
       <footer className="footer">
-        <div className="footer-tab"> Discover</div>
+        <div className="footer-tab">Discover</div>
         <div className="footer-tab">Community</div>
         <div className="footer-tab">Create</div>
         <div className="footer-tab">Profile</div>

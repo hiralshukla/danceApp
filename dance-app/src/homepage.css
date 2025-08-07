@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
+
+* {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 .homepage {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #ffffff;
@@ -236,6 +242,30 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+.general-section {
+  text-align: center;
+  background: #fffcfc;
+  padding: 3rem 1rem;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.general-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.general-text {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+/* Already existing .general-btn will remain in use */
+
+
 /* Explore Styles Section */
 .explore-section {
   margin-top: 5rem;
@@ -432,4 +462,39 @@
   .main-buttons {
     gap: 0.75rem;
   }
+}
+
+/* Gradient background */
+.gradient-background {
+  background: linear-gradient(to bottom right, #c086cd, #f0f0ff, #ffffff);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #9333ea, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Shimmer effect on cards */
+.shimmer {
+  background: linear-gradient(135deg, #2d2d2d, #3a3a3a, #4b0082);
+  background-size: 300% 300%;
+  animation: shimmerMove 2s infinite ease-in-out;
+}
+
+@keyframes shimmerMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pulse animation for buttons */
+.pulse {
+  animation: pulseFade 2s infinite;
+}
+
+@keyframes pulseFade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
 }
