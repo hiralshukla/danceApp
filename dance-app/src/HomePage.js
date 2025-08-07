@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import './homepage.css';
 
+
 const HomePage = () => {
+  const [expanded, setExpanded] = React.useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -69,9 +71,64 @@ const HomePage = () => {
           <button className="general-btn">General</button>
         </div>
   
-        
+
       </section>
-      
+
+      <section className="explore-section">
+        <h2 className="explore-title">Explore Styles</h2>
+
+        <div className="style-grid-container">
+          <div className="style-grid">
+            {[
+              'Hip-Hop', 'Contemporary', 'Ballet',
+              'Jazz', 'Breaking', 'Popping',
+              'Heels', 'Waacking', 'Ballroom'
+            ].map((style, idx) => (
+              <div className="style-card" key={idx}>{style}</div>
+            ))}
+          </div>
+
+          {!expanded && (
+            <div className="see-all-overlay" onClick={() => setExpanded(true)}>
+              <p className="see-all-text">See All ⌄</p>
+            </div>
+          )}
+        </div>
+
+        {expanded && (
+          <>
+            <div className="expanded-grid">
+              {[
+                'Salsa', 'K-Pop', 'Tutting', 'Krump',
+                'Kathak', 'Bharatanatyam', 'Tango', 'Tap'
+              ].map((style, idx) => (
+                <div className="style-card" key={`extra-${idx}`}>{style}</div>
+              ))}
+            </div>
+
+            <button className="collapse-btn" onClick={() => setExpanded(false)}>
+              Collapse All ▲
+            </button>
+          </>
+        )}
+     </section>
+
+     {/* Ready to Shine Section */}
+      <section className="shine-section">
+        <div className="shine-card">
+          <h3 className="shine-title">Ready to shine?</h3>
+          <p className="shine-subtext">Join thousands of dancers sharing their passion</p>
+
+          <div className="shine-buttons">
+            <button className="btn upload-btn">
+              📹 Upload Your Dance <span className="arrow">→</span>
+            </button>
+            <button className="btn join-btn-light">
+              👥 Join Community
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* Footer Bar */}
       <footer className="footer">
