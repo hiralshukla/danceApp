@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import FolderPostsPage from './FolderPostsPage';
 import HomePage from './HomePage';
 import ProfilePage from './ProfilePage';
 import SignUpPage from './SignUpPage';
@@ -12,6 +13,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
       </Routes>
     </Router>
+  );
+}
 
 export default App;
 // function App() {
