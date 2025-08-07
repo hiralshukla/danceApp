@@ -1,7 +1,9 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
+import ProfilePage from './ProfilePage';
+import SignUpPage from './SignUpPage';
+import LoginPage from './LoginPage';
 
 function App() {
   return (
@@ -10,8 +12,6 @@ function App() {
         <Route path="/" element={<HomePage />} />
       </Routes>
     </Router>
-  );
-}
 
 export default App;
 // function App() {
