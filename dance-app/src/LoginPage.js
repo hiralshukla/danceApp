@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from './firebase';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +21,7 @@ export default function SignUpPage() {
         // Signed in 
         const user = userCredential.user;
         console.log("Successfully accessed account")
+        navigate("/profile");
     })
     .catch((error) => {
         console.error("Login Error:", error); // full object

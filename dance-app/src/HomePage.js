@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import './homepage.css';
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const [expanded, setExpanded] = useState(false);
-
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       entries => {
@@ -34,7 +36,7 @@ const HomePage = () => {
         <input className="search" type="text" placeholder="Search dancers, styles, trends..." />
         <div className="nav-buttons">
           <button className="btn create-btn">Create Video</button>
-          <button className="btn login-btn">Login</button>
+          <button className="btn login-btn" onClick={() => navigate('/login')}>Login</button>
           <button className="notif-btn">🔔</button>
         </div>
       </nav>
@@ -44,8 +46,8 @@ const HomePage = () => {
         <h1 className="title black-text">kham</h1>
         <p className="subtitle">An app for dancers, by dancers</p>
         <div className="main-buttons">
-          <button className="btn gradient-btn pulse">Start Creating Now</button>
-          <button className="btn join-btn">Join the Community →</button>
+          <button className="btn gradient-btn pulse" onClick={() => navigate('/signup')}>Start Creating Now</button>
+          <button className="btn join-btn" onClick={() => navigate('/signup')}>Join the Community →</button>
         </div>
         <p className="scroll-text">Scroll to explore</p>
       </main>
@@ -131,8 +133,8 @@ const HomePage = () => {
       <footer className="footer">
         <div className="footer-tab">Discover</div>
         <div className="footer-tab">Community</div>
-        <div className="footer-tab">Create</div>
-        <div className="footer-tab">Profile</div>
+        <div className="footer-tab" onClick={() => navigate('/signup')}>Create</div>
+        <div className="footer-tab" onClick={() => navigate('/profile')}>Profile</div>
       </footer>
     </div>
   );
