@@ -164,6 +164,54 @@ export default function ProfilePage() {
           )}
         </div>
 
+{/* Media Section: Highlight Reel + Headshot Side-by-Side */}
+<div className="mt-12 flex flex-col md:flex-row gap-6">
+  {/* Highlight Reel */}
+  <div className="flex-1 border border-primary rounded-lg p-4">
+    <h2 className="text-xl font-bold mb-2">Highlight Reel</h2>
+    {highlightVideo ? (
+      <video controls className="w-full rounded-md">
+        <source src={highlightVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    ) : (
+      <p className="text-base-content/70">No highlight reel uploaded.</p>
+    )}
+    {editMode && (
+      <div className="mt-2">
+        <input
+          ref={videoInputRef}
+          type="file"
+          accept="video/*"
+          onChange={e => handleFileChange(e, setHighlightVideo)}
+        />
+      </div>
+    )}
+  </div>
+
+  {/* Headshot */}
+  <div className="flex-1 border border-primary rounded-lg p-4">
+    <h2 className="text-xl font-bold mb-2">Headshot</h2>
+    {headshot ? (
+      <img src={headshot} alt="Headshot" className="w-full max-h-72 object-contain rounded-md" />
+    ) : (
+      <p className="text-base-content/70">No headshot uploaded.</p>
+    )}
+    {editMode && (
+      <div className="mt-2">
+        <input
+          ref={headshotInputRef}
+          type="file"
+          accept="image/*"
+          onChange={e => handleFileChange(e, setHeadshot)}
+        />
+      </div>
+    )}
+  </div>
+</div>
+
+      
+
         {editMode && (
           <div className="mt-6 flex gap-2">
             <button onClick={handleAddDance} className="btn btn-outline btn-sm"><Plus size={16} className="mr-1" /> Add Folder</button>
@@ -180,7 +228,7 @@ export default function ProfilePage() {
                       <div
                         ref={provided.innerRef}
                         {...provided.draggableProps}
-                        className="relative w-60 pt-[75%] bg-cover bg-center rounded-lg overflow-hidden shadow-lg group"
+                        className="relative w-40 h-40 bg-cover bg-center rounded-lg overflow-hidden shadow-lg group"
                         style={{
                           ...provided.draggableProps.style,
                           backgroundImage: `url(${d.imageUrl})`
@@ -263,49 +311,7 @@ export default function ProfilePage() {
             )}
           </Droppable>
         </DragDropContext>
-
-        <div className="mt-10">
-          <h2 className="text-xl font-bold mb-2">Highlight Reel</h2>
-          {highlightVideo ? (
-            <video controls className="w-full max-w-lg rounded-lg">
-              <source src={highlightVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          ) : (
-            <p>No video uploaded.</p>
-          )}
-          {editMode && (
-            <div className="mt-2">
-              <input
-                ref={videoInputRef}
-                type="file"
-                accept="video/*"
-                onChange={e => handleFileChange(e, setHighlightVideo)}
-              />
-            </div>
-          )}
-        </div>
-
-        <div className="mt-10">
-          <h2 className="text-xl font-bold mb-2">Headshot</h2>
-          {headshot ? (
-            <img src={headshot} alt="Headshot" className="max-w-xs rounded-lg shadow-md" />
-          ) : (
-            <p>No headshot uploaded.</p>
-          )}
-          {editMode && (
-            <div className="mt-2">
-              <input
-                ref={headshotInputRef}
-                type="file"
-                accept="image/*"
-                onChange={e => handleFileChange(e, setHeadshot)}
-              />
-            </div>
-          )}
-        </div>
       </div>
     </div>
   );
 }
-
