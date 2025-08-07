@@ -1,15 +1,31 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from './firebase';
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const emailInput = e.target.querySelector('input[type="email"]');
+
+    //Use regex pattern of @ufl.edu email
+    const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+    //Check that email is valid
+    if (!gmailPattern.test(email)) {
+        emailInput.setCustomValidity("Please enter a valid gmail to sign in (####@gmail.com).");
+        emailInput.reportValidity(); 
+        return;
+    } else {
+        emailInput.setCustomValidity(""); //Clear error if valid
+    }
 
     if (!e.target.checkValidity()) {
       e.target.reportValidity();
@@ -23,6 +39,7 @@ export default function SignUpPage() {
         const user = userCredential.user;
         return updateProfile(user, { displayName: name }).then(() => {
           console.log("Successfully added name");
+          navigate("/login");
         });
       })
       .catch((error) => {
