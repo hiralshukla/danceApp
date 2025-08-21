@@ -64,12 +64,12 @@
 }
 
 .create-btn {
-  background-color: #9333ea;
+  background-color: #3E0866;
   color: white;
 }
 
 .create-btn:hover {
-  background-color: #7e22ce;
+  background-color: #501A5E;
 }
 
 .login-btn {
@@ -98,12 +98,12 @@
 .title {
   font-size: 5rem;
   font-weight: bold;
-  color: #111827;
+  color: #ffffff;
 }
 
 .subtitle {
   font-size: 1.5rem;
-  color: #6b7280;
+  color: #dacdde;
   margin-top: 0.5rem;
 }
 
@@ -155,7 +155,7 @@
   margin-top: 3rem;
   font-size: 1.125rem;
   font-style: italic;
-  color: #4b5563;
+  color: #dacdde;
 }
 
 /* Footer */
@@ -466,7 +466,7 @@
 
 /* Gradient background */
 .gradient-background {
-  background: linear-gradient(to bottom right, #c086cd, #f0f0ff, #ffffff);
+  background: linear-gradient(to bottom right, #3E0866, #000000, #3E0866);
 }
 
 /* Gradient text */

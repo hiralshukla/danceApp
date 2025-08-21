@@ -31,7 +31,7 @@ const HomePage = () => {
       {/* Nav Bar */}
       <nav className="navbar">
         <div className="logo black-text">
-          8count<span className="dot">.</span>
+          EightCount<span className="dot">.</span>
         </div>
         <input className="search" type="text" placeholder="Search dancers, styles, trends..." />
         <div className="nav-buttons">
@@ -43,7 +43,7 @@ const HomePage = () => {
 
       {/* Main Content */}
       <main className="main-content">
-        <h1 className="title black-text">kham</h1>
+        <h1 className="title black-text">EightCount<span className="dot">.</span></h1>
         <p className="subtitle">An app for dancers, by dancers</p>
         <div className="main-buttons">
           <button className="btn gradient-btn pulse" onClick={() => navigate('/signup')}>Start Creating Now</button>
@@ -55,15 +55,15 @@ const HomePage = () => {
       {/* Info Section */}
       <section className="info-section">
         <div className="info-block fade-up" style={{ marginTop: '4rem' }}>
-          <h2>Jumpstart your career!</h2>
-          <p>Whether you’re a beginner or a pro, kham connects you with worSkshops, battles, and gigs in your city.</p>
+          <h2 className="title black-text">Jumpstart your career!</h2>
+          <p>Whether you’re a beginner or a pro, kham connects you with workshops, battles, and gigs in your city.</p>
         </div>
         <div className="info-block fade-up">
-          <h2>There’s a dancer in everyone!</h2>
-          <p>From freestylers to classical artists—find your rhythm, share your story, and grow with a like-minded crew.</p>
+          <h2 className="title black-text">There’s a dancer in everyone!</h2>
+          <p className="subtitle">From freestylers to classical artists—find your rhythm, share your story, and grow with a like-minded crew.</p>
         </div>
         <div className="info-block fade-up">
-          <h2>Meet the Team</h2>
+          <h2 className="title black-text">Meet the Team</h2>
           <p>We’re dancers, creators, and coders building a space we always wished existed—by dancers, for dancers.</p>
         </div>
         <div className="info-block fade-up general-section">
